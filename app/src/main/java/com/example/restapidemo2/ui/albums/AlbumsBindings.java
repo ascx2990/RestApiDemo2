@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 
 public class AlbumsBindings {
     @BindingAdapter("visibleGone")
@@ -15,10 +17,19 @@ public class AlbumsBindings {
     }
 
     @BindingAdapter("imageUrl")
-    public static void bindImage(ImageView imageView, String url) {
+    public static void bindImage(final ImageView imageView, String url) {
         Context context = imageView.getContext();
         Glide.with(context)
-                .load(url)
+                .load(url).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).thumbnail(0.5f)
                 .into(imageView);
+//                .into(new SimpleTarget<Drawable>() {
+//                          @Override
+//                          public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
+//                              if(drawable!=null){
+//                                  imageView.setImageDrawable(drawable);
+//                              }
+//                          }
+//                      });
+
     }
 }
