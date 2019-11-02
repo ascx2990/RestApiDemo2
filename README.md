@@ -2,7 +2,7 @@
 此為相簿範例，用MVVM架構設計。  
 其中使用到Retrofit，Glide，資料庫(SQLiteOpenHelper)等。
 [後端資料來源](https://jsonplaceholder.typicode.com/)  
-
+[DiffUtil vs NotifyDataSetChanged](https://camposha.info/android-diffutil-vs-notifydatasetchanged-usage/)(kotlin)  
 
 
 
